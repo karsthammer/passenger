@@ -239,8 +239,8 @@ passenger_merge_loc_conf(ngx_conf_t *cf, void *parent, void *child)
         conf->app_spawner_idle_time = prev->app_spawner_idle_time;
     }
     
-    if (prev->base_uris != NGX_CONF_UNSET_PTR) {
-        if (conf->base_uris == NGX_CONF_UNSET_PTR) {
+    if (prev->base_uris != NULL && prev->base_uris != NGX_CONF_UNSET_PTR) {
+        if (conf->base_uris == NULL || conf->base_uris == NGX_CONF_UNSET_PTR) {
             conf->base_uris = ngx_array_create(cf->pool, 4, sizeof(ngx_str_t));
             if (conf->base_uris == NULL) {
                 return NGX_CONF_ERROR;
