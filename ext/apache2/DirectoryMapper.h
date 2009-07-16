@@ -231,7 +231,7 @@ public:
 				 * This is probably a symlink, so let's resolve it.
 				 */
 				path.append(baseURI);
-				path = resolveSymlink(path);
+				//path = resolveSymlink(path);
 			}
 			return path;
 		} else {
