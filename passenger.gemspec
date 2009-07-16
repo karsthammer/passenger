@@ -9,7 +9,6 @@ Gem::Specification.new do |s|
   s.email = "info@phusion.nl"
   s.requirements << "fastthread" << "Apache 2 with development headers"
   s.require_paths = ["lib", "ext"]
-  s.add_dependency 'rake', '>= 0.8.1'
   s.add_dependency 'fastthread', '>= 1.0.1'
   s.extensions << 'ext/phusion_passenger/extconf.rb'
   s.files = FileList[
